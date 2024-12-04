@@ -48,5 +48,12 @@
     "fullname": "popo",
     "score": 10000,
     "_id": "cjHBQ"
+  },
+  {
+    "username": "Admin",
+    "password": "admin",
+    "fullname": "admin",
+    "score": 10000,
+    "_id": "QE9dJ"
   }
 ]
