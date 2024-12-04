@@ -1,0 +1,156 @@
+[
+  {
+    "name": "Puki Toy",
+    "_id": "WepLV",
+    "price": 3466,
+    "labels": [
+      "Doll",
+      "Battery Powered",
+      "Baby"
+    ],
+    "createdAt": 1701602400000,
+    "inStock": true,
+    "owner": {
+      "_id": "u101",
+      "fullname": "Puki Ja"
+    }
+  },
+  {
+    "name": "Muki Toy",
+    "_id": "wYrey",
+    "price": 4999,
+    "labels": [
+      "Box game",
+      "On wheels"
+    ],
+    "createdAt": 1701645600000,
+    "inStock": true,
+    "owner": {
+      "_id": "u102",
+      "fullname": "Muki Ba"
+    }
+  },
+  {
+    "name": "Susita-418",
+    "price": 1,
+    "_id": "Du2qd",
+    "labels": [
+      "Battery Powered",
+      "Art"
+    ],
+    "createdAt": 1701678000000,
+    "inStock": false,
+    "owner": {
+      "fullname": "admin",
+      "_id": "Uo93j",
+      "isAdmin": true
+    }
+  },
+  {
+    "name": "Susita-397",
+    "price": 879,
+    "_id": "fGOU1",
+    "labels": [
+      "Puzzle",
+      "On wheels"
+    ],
+    "createdAt": 1701721200000,
+    "inStock": true,
+    "owner": {
+      "fullname": "admin",
+      "_id": "Uo93j",
+      "isAdmin": true
+    }
+  },
+  {
+    "name": "Susita-336",
+    "price": 4423,
+    "_id": "d3HIR",
+    "labels": [
+      "On wheels",
+      "Battery Powered"
+    ],
+    "createdAt": 1701750000000,
+    "inStock": false,
+    "owner": {
+      "fullname": "Puki Ja",
+      "_id": "u101"
+    }
+  },
+  {
+    "name": "Roy Toy",
+    "price": 5699,
+    "_id": "lqIQG",
+    "labels": [
+      "Art",
+      "Outdoor"
+    ],
+    "createdAt": 1701782400000,
+    "inStock": true,
+    "owner": {
+      "fullname": "Kiki Ki",
+      "_id": "6iykr"
+    }
+  },
+  {
+    "name": "Talking Doll",
+    "price": 4,
+    "_id": "qc7Ad",
+    "labels": [
+      "Baby",
+      "Battery Powered"
+    ],
+    "createdAt": 1701825600000,
+    "inStock": true,
+    "owner": {
+      "_id": "tPNhk",
+      "fullname": "cc"
+    }
+  },
+  {
+    "name": "Baby Doll",
+    "price": 26,
+    "_id": "mlDoh3",
+    "labels": [
+      "Baby",
+      "On wheels"
+    ],
+    "createdAt": 1701872400000,
+    "inStock": true,
+    "owner": {
+      "_id": "tPNhk",
+      "fullname": "cc"
+    }
+  },
+  {
+    "name": "Chucky",
+    "price": 199,
+    "_id": "5zl4r3",
+    "labels": [
+      "Baby",
+      "Art",
+      "Battery Powered"
+    ],
+    "createdAt": 1701901200000,
+    "inStock": true,
+    "owner": {
+      "_id": "tPNhk",
+      "fullname": "cc"
+    }
+  },
+  {
+    "name": "Annabelle",
+    "price": 2385,
+    "_id": "WBQ97",
+    "labels": [
+      "Box game",
+      "Outdoor"
+    ],
+    "createdAt": 1701933600000,
+    "inStock": true,
+    "owner": {
+      "_id": "tPNhk",
+      "fullname": "cc"
+    }
+  }
+]
