@@ -6,6 +6,7 @@ import cors from 'cors'
 import { toyService } from './services/toy.service.js'
 import { userService } from './services/user.service.js'
 import { loggerService } from './services/logger.service.js'
+import { create } from 'domain'
 
 const app = express()
 
@@ -32,11 +33,12 @@ app.get('/api/toy', (req, res) => {
     const filterBy = {
         txt: req.query.txt || '',
         maxPrice: +req.query.maxPrice || 0,
+        labels: req.query.labels || [],
+        inStock: req.query.inStock || '',
         pageIdx: req.query.pageIdx || undefined,
     }
     toyService.query(filterBy)
         .then(toys => {
-            console.log(toys)
             return toys
         })
         .then(toys => res.send(toys))
@@ -64,6 +66,9 @@ app.post('/api/toy', (req, res) => {
     const toy = {
         name: req.body.name,
         price: +req.body.price,
+        inStock: req.body.inStock,
+        labels: req.body.labels,
+        createdAt: req.body.createdAtx,
     }
     toyService.save(toy, loggedinUser)
         .then(savedToy => res.send(savedToy))
