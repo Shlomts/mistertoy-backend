@@ -1,30 +1,30 @@
-import fs from 'fs'
+import fs from "fs"
 
-export const loggerService = {
-    debug(...args) {
-        doLog('DEBUG', ...args)
-    },
-    info(...args) {
-        doLog('INFO', ...args)
-    },
-    warn(...args) {
-        doLog('WARN', ...args)
-    },
-    error(...args) {
-        doLog('ERROR', ...args)
-    }
-}
-
-const logsDir = './logs'
-
+const logsDir = "./logs"
 if (!fs.existsSync(logsDir)) {
     fs.mkdirSync(logsDir)
 }
 
-//define the time format
+export const logger = {
+    debug(...args) {
+        if (process.env.NODE_NEV === "production") return
+        doLog("DEBUG", ...args)
+    },
+    info(...args) {
+        doLog("INFO", ...args)
+    },
+    warn(...args) {
+        doLog("WARN", ...args)
+    },
+    error(...args) {
+        doLog("ERROR", ...args)
+    },
+}
+
+
 function getTime() {
     let now = new Date()
-    return now.toLocaleString('he')
+    return now.toLocaleString("he")
 }
 
 function isError(e) {
@@ -32,15 +32,14 @@ function isError(e) {
 }
 
 function doLog(level, ...args) {
-
-    const strs = args.map(arg =>
-        (typeof arg === 'string' || isError(arg)) ? arg : JSON.stringify(arg)
+    const strs = args.map((arg) =>
+        typeof arg === "string" || isError(arg) ? arg : JSON.stringify(arg)
     )
-    var line = strs.join(' | ')
+    var line = strs.join(" | ")
     line = `${getTime()} - ${level} - ${line}\n`
     console.log(line)
 
-    fs.appendFile(`${logsDir}/backend.log`, line, (err) =>{
-        if (err) console.log('FATAL: cannot write to log file')
+    fs.appendFile(`${logsDir}/backend.log`, line, (err) => {
+        if (err) console.log("FATAL: cannot write to log file")
     })
 }
