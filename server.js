@@ -231,8 +231,8 @@ app.listen(port, () => {
 //     const loggedinUser = userService.validateToken(req.cookies.loginToken)
 //     if (!loggedinUser) return res.status(400).send('No logged in user')
 //     const { diff } = req.body
-//     if (loggedinUser.score + diff < 0) return res.status(400).send('No credit')
-//     loggedinUser.score += diff
+//     if (loggedinUser.balance + diff < 0) return res.status(400).send('No credit')
+//     loggedinUser.balance += diff
 //     return userService.save(loggedinUser).then(user => {
 //         const token = userService.getLoginToken(user)
 //         res.cookie('loginToken', token)

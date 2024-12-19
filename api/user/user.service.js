@@ -69,7 +69,7 @@ async function update(user) {
 			_id: ObjectId.createFromHexString(user._id),
 			username: user.username,
 			fullname: user.fullname,
-			score: user.score,
+			balance: user.balance,
 		}
 		const collection = await dbService.getCollection('user')
 		await collection.updateOne({ _id: userToSave._id }, { $set: userToSave })
@@ -82,16 +82,15 @@ async function update(user) {
 
 async function add(user) {
 	try {
-		// Validate that there are no such user:
 		const existUser = await getByUsername(user.username)
 		if (existUser) throw new Error('Username taken')
 
-		// peek only updatable fields!
 		const userToAdd = {
 			username: user.username,
 			password: user.password,
 			fullname: user.fullname,
-			score: user.score || 0,
+			isAdmin: user.isAdmin,
+			balance: user.balance || 1000,
 		}
 		const collection = await dbService.getCollection('user')
 		await collection.insertOne(userToAdd)
@@ -132,7 +131,7 @@ function _buildCriteria(filterBy) {
 //             _id: user._id,
 //             fullname: user.fullname,
 //             isAdmin: user.isAdmin,
-//             score: user.score
+//             balance: user.balance
 //         }
 //     }
 //     return Promise.resolve(user)

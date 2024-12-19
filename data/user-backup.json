@@ -3,43 +3,43 @@
         "username": "puki",
         "fullname": "Puki Ja",
         "password": "puki",
-        "score": 10000
+        "balance": 10000
     },
     {
         "username": "muki",
         "fullname": "Muki Ba",
         "password": "secret2",
-        "score": 10000
+        "balance": 10000
     },
     {
         "username": "kiki",
         "password": "kiki",
-        "score": 4327,
+        "balance": 4327,
         "fullname": "Kiki Ki"
     },
     {
         "username": "admin",
         "password": "admin",
         "fullname": "admin",
-        "score": 10000,
+        "balance": 10000,
         "isAdmin": true
     },
     {
         "username": "cc",
         "password": "cc",
         "fullname": "cc",
-        "score": 10000
+        "balance": 10000
     },
     {
         "username": "popo",
         "password": "popo",
         "fullname": "popo",
-        "score": 10000
+        "balance": 10000
     },
     {
         "username": "Admin",
         "password": "admin",
         "fullname": "admin",
-        "score": 10000
+        "balance": 10000
     }
 ]
