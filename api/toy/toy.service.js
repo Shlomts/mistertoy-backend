@@ -14,13 +14,16 @@ export const toyService = {
     removeToyMsg,
 }
 
-async function query(filterBy = { txt: "" }) {
+async function query(filterBy) {
+    console.log(filterBy)
     try {
         const criteria = {}
 
         if (filterBy.txt)
             criteria.name = { $regex: filterBy.txt, $options: "i" }
-        if (filterBy.maxPrice) criteria.price = { $gte: +filterBy.maxPrice }
+
+        if (filterBy.maxPrice) criteria.price = { $lte: +filterBy.maxPrice }
+
         if (filterBy.inStock) {
             if (filterBy.inStock === "true") {
                 criteria.inStock = true
@@ -35,13 +38,14 @@ async function query(filterBy = { txt: "" }) {
                     ],
                 }
         }
-        if (filterBy.labels && filterBy.labels.length > 0) criteria.labels = { $in: filterBy.labels }
+
+        if (filterBy.labels && filterBy.labels.length > 0)
+            criteria.labels = { $in: filterBy.labels }
 
         const collection = await dbService.getCollection("toy")
         var toys = await collection.find(criteria).toArray()
-		
-        return toys
 
+        return toys
     } catch (err) {
         logger.error("cannot find toys", err)
         throw err
@@ -103,7 +107,10 @@ async function add(toy) {
 async function update(toy) {
     try {
         const toyToSave = {
+            name: toy.name,
             price: toy.price,
+            labels: toy.labels,
+            inStock: toy.inStock,
         }
         const collection = await dbService.getCollection("toy")
         await collection.updateOne(

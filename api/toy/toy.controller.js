@@ -5,6 +5,10 @@ export async function getToys(req, res) {
     try {
         const filterBy = {
             txt: req.query.txt || '',
+            maxPrice: +req.query.maxPrice || undefined,
+            labels: req.query.labels || [],
+            inStock: req.query.inStock || '',
+            pageIdx: req.query.pageIdx || undefined,
         }
         const toys = await toyService.query(filterBy)
         res.json(toys)
